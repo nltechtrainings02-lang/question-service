@@ -22,6 +22,7 @@ public class QuestionService {
     private static Logger log = LoggerFactory.getLogger(QuestionService.class);
 
     public ResponseEntity<List<Question>> getAllQuestions() {
+        System.out.println("In question service file: getAllQuestions method");
         try {
             return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
         }catch (Exception e){
