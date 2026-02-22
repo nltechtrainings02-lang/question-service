@@ -25,12 +25,13 @@ public class QuestionController {
 
     @GetMapping("allQuestions")
     public ResponseEntity<List<Question>> getAllQuestions(){
+        System.out.println("Getting all questions from the service");
         return questionService.getAllQuestions();
     }
 
     @GetMapping("category/{category}")
     public ResponseEntity<List<Question>> getQuestionsByCategory(@PathVariable String category){
-        return questionService.getQuestionsByCategory(category);
+        return questionService.getQuestionsByCategory(category.toUpperCase());
     }
 
     @PostMapping("add")
